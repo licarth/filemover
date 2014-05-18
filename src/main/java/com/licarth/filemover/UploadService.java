@@ -1,6 +1,6 @@
 package com.licarth.filemover;
 
-import lombok.extern.java.Log;
+import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,15 +13,15 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-@Log
+@Log4j
 public class UploadService {
 
     @Autowired
     JdbcService service;
 
     public UploadService() {
-        log.info("File Service created.");
-        log.info("line after FS :"+ (System.currentTimeMillis() - App.start));
+        log.debug("File Service created.");
+        log.debug("line after FS :"+ (System.currentTimeMillis() - App.start));
     }
 
     @Override
