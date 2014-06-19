@@ -1,5 +1,6 @@
 package com.licarth.filemover.api;
 
+import com.licarth.filemover.api.model.ResponseObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +17,12 @@ public class EndPoint {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public String helloWorld(){
-        return "Hello";
+        return "Hello You";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/long", method = RequestMethod.GET, produces={"application/json"})
+    public ResponseObject helloPath(){
+        return new ResponseObject("test1");
     }
 }
